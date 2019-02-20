@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2035
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Input_Combos", "Input_Combos\Input_Combos.vcxproj", "{71220A8F-5D7E-43FD-991B-E79F5B69AB41}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{71220A8F-5D7E-43FD-991B-E79F5B69AB41}.Debug|x64.ActiveCfg = Debug|x64
+		{71220A8F-5D7E-43FD-991B-E79F5B69AB41}.Debug|x64.Build.0 = Debug|x64
+		{71220A8F-5D7E-43FD-991B-E79F5B69AB41}.Debug|x86.ActiveCfg = Debug|Win32
+		{71220A8F-5D7E-43FD-991B-E79F5B69AB41}.Debug|x86.Build.0 = Debug|Win32
+		{71220A8F-5D7E-43FD-991B-E79F5B69AB41}.Release|x64.ActiveCfg = Release|x64
+		{71220A8F-5D7E-43FD-991B-E79F5B69AB41}.Release|x64.Build.0 = Release|x64
+		{71220A8F-5D7E-43FD-991B-E79F5B69AB41}.Release|x86.ActiveCfg = Release|Win32
+		{71220A8F-5D7E-43FD-991B-E79F5B69AB41}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {41EB33B3-0140-45C8-9B88-A0209F09132B}
+	EndGlobalSection
+EndGlobal
