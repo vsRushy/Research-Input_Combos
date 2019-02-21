@@ -44,12 +44,12 @@ j1App::j1App(int argc, char* args[]) : argc(argc), args(args)
 j1App::~j1App()
 {
 	// release modules
-	p2List_item<j1Module*>* item = modules.end;
+	std::list<j1Module*>::reverse_iterator item = modules.rbegin();
 
-	while (item != NULL)
+	while (item != modules.rend())
 	{
-		RELEASE(item->data);
-		item = item->prev;
+		RELEASE(*item);
+		item++;
 	}
 
 	modules.clear();
@@ -58,7 +58,7 @@ j1App::~j1App()
 void j1App::AddModule(j1Module* module)
 {
 	module->Init();
-	modules.add(module);
+	modules.push_back(module);
 }
 
 // Called before the first frame
@@ -78,16 +78,13 @@ bool j1App::Start()
 		capped_ms = 1000 / cap;
 	}
 
-	if (ret == true)
-	{
-		std::list<j1Module*>::const_iterator item;
-		item = modules.begin();
+	std::list<j1Module*>::const_iterator item;
+	item = modules.begin();
 
-		while (item != modules.end())
-		{
-			ret = (*item)->Start();
-			item++;
-		}
+	while (item != modules.end())
+	{
+		ret = (*item)->Start();
+		item++;
 	}
 	
 	startup_time.Start();
@@ -132,14 +129,7 @@ void j1App::PrepareUpdate()
 // ---------------------------------------------
 void j1App::FinishUpdate()
 {
-	if (want_to_save == true)
-		SavegameNow();
-
-	if (want_to_load == true)
-		LoadGameNow();
-
 	// Framerate calculations --
-
 	if (last_sec_frame_time.Read() > 1000)
 	{
 		last_sec_frame_time.Start();
@@ -153,8 +143,7 @@ void j1App::FinishUpdate()
 	uint32 frames_on_last_update = prev_last_sec_frame_count;
 
 	static char title[256];
-	sprintf_s(title, 256, "Av.FPS: %.2f Last Frame Ms: %u Last sec frames: %i Last dt: %.3f Time since startup: %.3f Frame Count: %lu ",
-		avg_fps, last_frame_ms, frames_on_last_update, dt, seconds_since_startup, frame_count);
+	sprintf_s(title, 256, "Research-Input_Combos | Av.FPS: %.2f", avg_fps);
 	App->win->SetTitle(title);
 
 	if (capped_ms > 0 && last_frame_ms < capped_ms)
@@ -168,19 +157,19 @@ void j1App::FinishUpdate()
 bool j1App::PreUpdate()
 {
 	bool ret = true;
-	p2List_item<j1Module*>* item;
-	item = modules.start;
+	std::list<j1Module*>::const_iterator item;
+	item = modules.begin();
 	j1Module* pModule = NULL;
 
-	for (item = modules.start; item != NULL && ret == true; item = item->next)
+	for (item = modules.begin(); item != modules.end() && ret == true; item++)
 	{
-		pModule = item->data;
+		pModule = *item;
 
 		if (pModule->active == false) {
 			continue;
 		}
 
-		ret = item->data->PreUpdate();
+		ret = (*item)->PreUpdate();
 	}
 
 	return ret;
@@ -190,19 +179,19 @@ bool j1App::PreUpdate()
 bool j1App::DoUpdate()
 {
 	bool ret = true;
-	p2List_item<j1Module*>* item;
-	item = modules.start;
+	std::list <j1Module*>::const_iterator item;
+	item = modules.begin();
 	j1Module* pModule = NULL;
 
-	for (item = modules.start; item != NULL && ret == true; item = item->next)
+	for (item = modules.begin(); item != modules.end() && ret == true; item++)
 	{
-		pModule = item->data;
+		pModule = *item;
 
 		if (pModule->active == false) {
 			continue;
 		}
 
-		ret = item->data->Update(dt);
+		ret = (item*)->Update(dt);
 	}
 
 	return ret;
@@ -212,18 +201,18 @@ bool j1App::DoUpdate()
 bool j1App::PostUpdate()
 {
 	bool ret = true;
-	p2List_item<j1Module*>* item;
+	std::list<j1Module*>::const_iterator item;
 	j1Module* pModule = NULL;
 
-	for (item = modules.start; item != NULL && ret == true; item = item->next)
+	for (item = modules.begin(); item != modules.end() && ret == true; item++)
 	{
-		pModule = item->data;
+		pModule = *item;
 
 		if (pModule->active == false) {
 			continue;
 		}
 
-		ret = item->data->PostUpdate();
+		ret = (*item)->PostUpdate();
 	}
 
 	return ret;
@@ -234,13 +223,13 @@ bool j1App::CleanUp()
 {
 	PERF_START(ptimer);
 	bool ret = true;
-	p2List_item<j1Module*>* item;
-	item = modules.end;
+	std::list<j1Module*>::reverse_iterator item;
+	item = modules.rbegin();
 
-	while (item != NULL && ret == true)
+	while (item != modules.rend() && ret == true)
 	{
-		ret = item->data->CleanUp();
-		item = item->prev;
+		ret = (*item)->CleanUp();
+		item++;
 	}
 
 	PERF_PEEK(ptimer);
@@ -265,7 +254,7 @@ const char* j1App::GetArgv(int index) const
 // ---------------------------------------
 const char* j1App::GetTitle() const
 {
-	return title.GetString();
+	return title.data();
 }
 
 // ---------------------------------------
@@ -277,5 +266,5 @@ float j1App::GetDT() const
 // ---------------------------------------
 const char* j1App::GetOrganization() const
 {
-	return organization.GetString();
+	return organization.data();
 }
