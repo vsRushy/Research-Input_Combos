@@ -2,6 +2,7 @@
 #define __j1SCENE_H__
 
 #include "j1Module.h"
+#include "SDL/include/SDL_rect.h"
 
 struct SDL_Texture;
 
@@ -35,6 +36,9 @@ public:
 private:
 	// Character spritesheet
 	SDL_Texture* tex_ryu_spritesheet = nullptr;
+
+	// Character rect
+	SDL_Rect rect_ryu = { NULL };
 };
 
 #endif // __j1SCENE_H__

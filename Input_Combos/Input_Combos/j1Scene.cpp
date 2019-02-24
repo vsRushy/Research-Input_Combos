@@ -30,6 +30,9 @@ bool j1Scene::Awake()
 bool j1Scene::Start()
 {
 	tex_ryu_spritesheet = App->tex->Load("Assets/Textures/ryu_spritesheet.png");
+
+	// Define rects
+	rect_ryu = { 7, 14, 59, 90 };
 	
 	return true;
 }
@@ -63,7 +66,8 @@ bool j1Scene::Update(float dt)
 	if(App->input->GetKey(SDL_SCANCODE_RIGHT) == KEY_REPEAT)
 		App->render->camera.x -= floor(200.0f * dt);
 
-	App->render->Blit(tex_ryu_spritesheet, 0, 0);
+	// Draw ------------------
+	App->render->Blit(tex_ryu_spritesheet, 0, 0, &rect_ryu);
 
 	return true;
 }
