@@ -1,3 +1,15 @@
 # Research-Input_Combos
 
-## Title
+## About
+
+This repository can be found at:
+
+https://github.com/vsRushy/Research-Input_Combos
+
+Webpage:
+
+https://vsrushy.github.io/Research-Input_Combos/
+
+## Credits
+
+Gerard Marcos Freixas
