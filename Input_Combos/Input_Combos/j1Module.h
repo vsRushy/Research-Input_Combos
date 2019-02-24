@@ -1,7 +1,8 @@
 #ifndef __j1MODULE_H__
 #define __j1MODULE_H__
 
-#include "p2SString.h"
+#include <string>
+#include "PugiXml/src/pugixml.hpp"
 
 class j1App;
 
@@ -17,6 +18,12 @@ public:
 	void Init()
 	{
 		active = true;
+	}
+
+	// Called before render is available
+	virtual bool Awake(pugi::xml_node&)
+	{
+		return true;
 	}
 
 	// Called before the first frame
@@ -49,8 +56,18 @@ public:
 		return true;
 	}
 
+	virtual bool Load(pugi::xml_node&)
+	{
+		return true;
+	}
+
+	virtual bool Save(pugi::xml_node&) const
+	{
+		return true;
+	}
+
 public:
-	p2SString	name;
+	std::string	name;
 	bool		active;
 
 };

@@ -7,6 +7,8 @@
 #include "j1PerfTimer.h"
 #include "j1Timer.h"
 
+#include "PugiXml/src/pugixml.hpp"
+
 class j1Window;
 class j1Input;
 class j1Render;
@@ -22,6 +24,9 @@ public:
 
 	// Destructor
 	virtual ~j1App();
+
+	// Called before render is available
+	bool Awake();
 
 	// Called before the first frame
 	bool Start();
@@ -42,7 +47,13 @@ public:
 	const char* GetOrganization() const;
 	float GetDT() const;
 
+	void LoadGame(const char* file);
+	void SaveGame(const char* file) const;
+
 private:
+	// Load config file
+	pugi::xml_node LoadConfig(pugi::xml_document&) const;
+
 	// Call modules before each loop iteration
 	void PrepareUpdate();
 
@@ -57,6 +68,10 @@ private:
 
 	// Call modules after each loop iteration
 	bool PostUpdate();
+
+	// Load / Save
+	bool LoadGameNow();
+	bool SavegameNow() const;
 
 public:
 	// Modules
@@ -73,7 +88,12 @@ private:
 	char**				args;
 
 	std::string			title;
-	std::string				organization;
+	std::string			organization;
+
+	mutable bool		want_to_save = false;
+	bool				want_to_load = false;
+	std::string			load_game;
+	mutable std::string	save_game;
 
 	j1PerfTimer			ptimer;
 	uint64				frame_count = 0;

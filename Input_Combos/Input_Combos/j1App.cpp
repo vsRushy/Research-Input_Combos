@@ -1,5 +1,6 @@
-#include <iostream> 
-#include <sstream> 
+#include <iostream>
+#include <sstream>
+#include "SDL/include/SDL_timer.h"
 
 #include "p2Defs.h"
 #include "p2Log.h"
@@ -61,16 +62,63 @@ void j1App::AddModule(j1Module* module)
 	modules.push_back(module);
 }
 
+// Called before render is available
+bool j1App::Awake()
+{
+	PERF_START(ptimer);
+
+	pugi::xml_document	config_file;
+	pugi::xml_node		config;
+	pugi::xml_node		app_config;
+
+	bool ret = false;
+
+	config = LoadConfig(config_file);
+
+	if (config.empty() == false)
+	{
+		// self-config
+		ret = true;
+		app_config = config.child("app");
+		title.assign(app_config.child("title").child_value());
+		organization.assign(app_config.child("organization").child_value());
+
+		int cap = app_config.attribute("framerate_cap").as_int(-1);
+
+		if (cap > 0)
+		{
+			capped_ms = 1000 / cap;
+		}
+	}
+
+	if (ret == true)
+	{
+		std::list<j1Module*>::const_iterator item;
+		item = modules.begin();
+
+		while (item != modules.end() && ret == true)
+		{
+			pugi::xml_node aux = config.child((*item)->name.data());
+			ret = (*item)->Awake(aux);
+			item++;
+		}
+	}
+
+	PERF_PEEK(ptimer);
+
+	return ret;
+}
+
 // Called before the first frame
 bool j1App::Start()
 {
 	PERF_START(ptimer);
 
 	bool ret = true;
-
+	
 	title.assign("Research-Input_Combos");
 	organization.assign("Gerard Marcos Freixas");
-
+	
 	int cap = 60;
 
 	if (cap > 0)
@@ -117,6 +165,21 @@ bool j1App::Update()
 }
 
 // ---------------------------------------------
+pugi::xml_node j1App::LoadConfig(pugi::xml_document& config_file) const
+{
+	pugi::xml_node ret;
+
+	pugi::xml_parse_result result = config_file.load_file("config.xml");
+
+	if (result == NULL)
+		LOG("Could not load map xml file config.xml. pugi error: %s", result.description());
+	else
+		ret = config_file.child("config");
+
+	return ret;
+}
+
+// ---------------------------------------------
 void j1App::PrepareUpdate()
 {
 	frame_count++;
@@ -129,6 +192,12 @@ void j1App::PrepareUpdate()
 // ---------------------------------------------
 void j1App::FinishUpdate()
 {
+	if (want_to_save == true)
+		SavegameNow();
+
+	if (want_to_load == true)
+		LoadGameNow();
+
 	// Framerate calculations --
 	if (last_sec_frame_time.Read() > 1000)
 	{
@@ -148,7 +217,6 @@ void j1App::FinishUpdate()
 
 	if (capped_ms > 0 && last_frame_ms < capped_ms)
 	{
-		j1PerfTimer t;
 		SDL_Delay(capped_ms - last_frame_ms);
 	}
 }
@@ -191,7 +259,7 @@ bool j1App::DoUpdate()
 			continue;
 		}
 
-		ret = (item*)->Update(dt);
+		ret = (*item)->Update(dt);
 	}
 
 	return ret;
@@ -267,4 +335,95 @@ float j1App::GetDT() const
 const char* j1App::GetOrganization() const
 {
 	return organization.data();
+}
+
+
+// Load / Save
+void j1App::LoadGame(const char* file)
+{
+	want_to_load = true;
+}
+
+// ---------------------------------------
+void j1App::SaveGame(const char* file) const
+{
+
+	want_to_save = true;
+	save_game.assign(file);
+}
+
+// ---------------------------------------
+
+bool j1App::LoadGameNow()
+{
+	bool ret = false;
+
+	pugi::xml_document data;
+	pugi::xml_node root;
+
+	pugi::xml_parse_result result = data.load_file(load_game.data());
+
+	if (result != NULL)
+	{
+		LOG("Loading new Game State from %s...", load_game.data());
+
+		root = data.child("game_state");
+
+		std::list<j1Module*>::const_iterator item = modules.begin();
+		ret = true;
+
+		while (item != modules.end() && ret == true)
+		{
+			pugi::xml_node aux = root.child((*item)->name.data());
+			ret = (*item)->Load(aux);
+			item++;
+		}
+
+		data.reset();
+		if (ret == true)
+			LOG("...finished loading");
+		else
+			LOG("...loading process interrupted with error on module %s", ((*item) != NULL) ? (*item)->name.data() : "unknown");
+	}
+	else
+		LOG("Could not parse game state xml file %s. pugi error: %s", load_game.data(), result.description());
+
+	want_to_load = false;
+	return ret;
+}
+
+bool j1App::SavegameNow() const
+{
+	bool ret = true;
+
+	LOG("Saving Game State to %s...", save_game.data());
+
+	// xml object were we will store all data
+	pugi::xml_document data;
+	pugi::xml_node root;
+
+	root = data.append_child("game_state");
+
+	std::list<j1Module*>::const_iterator item = modules.begin();
+
+	while (item != modules.end() && ret == true)
+	{
+		pugi::xml_node aux = root.append_child((*item)->name.data());
+		ret = (*item)->Save(aux);
+		item++;
+	}
+
+	if (ret == true)
+	{
+		std::stringstream stream;
+		data.save(stream);
+
+		LOG("... finished saving", save_game.data());
+	}
+	else
+		LOG("Save process halted from an error in module %s", ((*item) != NULL) ? (*item)->name.data() : "unknown");
+
+	data.reset();
+	want_to_save = false;
+	return ret;
 }
