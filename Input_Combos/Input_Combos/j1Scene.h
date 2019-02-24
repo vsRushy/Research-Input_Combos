@@ -33,7 +33,8 @@ public:
 	bool CleanUp();
 
 private:
-	
+	// Character spritesheet
+	SDL_Texture* tex_ryu_spritesheet = nullptr;
 };
 
 #endif // __j1SCENE_H__
