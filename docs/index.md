@@ -4,7 +4,7 @@ I am <a href="https://www.linkedin.com/in/gerard-marcos-freixas-0a9284158"/>Gera
 <a href="https://www.citm.upc.edu/ing/estudis/graus-videojocs"/>Bachelor’s Degree in
 Video Games by UPC at CITM</a>. This content is generated for the second year’s
 subject Project 2, under supervision of lecturer
-<https://es.linkedin.com/in/ricardpillosu>(Ricard Pillosu).
+<a href="https://es.linkedin.com/in/ricardpillosu"/>Ricard Pillosu</a>.
 
 ## About
 
