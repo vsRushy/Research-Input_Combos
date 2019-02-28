@@ -1,6 +1,6 @@
 # Research-Input_Combos
 
-I am <https://www.linkedin.com/in/gerard-marcos-freixas-0a9284158/>(Gerard Marcos), student of the
+I am <a href="https://www.linkedin.com/in/gerard-marcos-freixas-0a9284158"/>Gerard Marcos</a>, student of the
 <https://www.citm.upc.edu/ing/estudis/graus-videojocs/>(Bachelor’s Degree in
 Video Games by UPC at CITM). This content is generated for the second year’s
 subject Project 2, under supervision of lecturer
