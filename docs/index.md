@@ -16,6 +16,15 @@ Webpage:
 
 https://vsrushy.github.io/Research-Input_Combos/
 
+## Content
+
+### 1. Introduction
+
+#### 1.1. What is a combo?
+
+cancel anim etc
+lerp collisions?
+
 ## Credits
 
 Gerard Marcos Freixas
