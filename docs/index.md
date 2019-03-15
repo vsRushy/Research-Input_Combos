@@ -28,3 +28,8 @@ lerp collisions?
 ## Credits
 
 Gerard Marcos Freixas
+
+## Useful links
+
+https://en.wikipedia.org/wiki/Combo_(video_gaming)
+https://www.giantbomb.com/combo/3015-18/
