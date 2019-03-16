@@ -16,6 +16,10 @@ Webpage:
 
 https://vsrushy.github.io/Research-Input_Combos/
 
+Presentation: 
+
+https://docs.google.com/presentation/d/16z97q2Py7VZDIpAKD4kI0Hrswirgs1L-MljOpgHzotc/edit?usp=sharing
+
 ## Content
 
 ### 1. Introduction
@@ -27,9 +31,16 @@ lerp collisions?
 
 ## Credits
 
+Author:
+
 Gerard Marcos Freixas
 
 ## Useful links
 
 https://en.wikipedia.org/wiki/Combo_(video_gaming)
+
 https://www.giantbomb.com/combo/3015-18/
+
+https://thirdpersonblog.wordpress.com/2011/08/18/universal-fighting-game-guide-understanding-combo-systems-part-1-the-elements/
+
+https://www.reddit.com/r/gamedev/comments/1yu4px/how_to_properly_handle_tons_of_inputs_in_a/
