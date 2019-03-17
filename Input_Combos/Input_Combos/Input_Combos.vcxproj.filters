@@ -33,6 +33,9 @@
     <ClCompile Include="j1Scene.cpp">
       <Filter>Scenes</Filter>
     </ClCompile>
+    <ClCompile Include="j1InputCombos.cpp">
+      <Filter>Modules</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="j1App.h" />
@@ -75,6 +78,9 @@
     </ClInclude>
     <ClInclude Include="j1Scene.h">
       <Filter>Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="j1InputCombos.h">
+      <Filter>Modules</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
