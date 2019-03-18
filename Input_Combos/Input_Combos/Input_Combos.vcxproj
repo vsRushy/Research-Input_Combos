@@ -119,6 +119,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="InputEvent.cpp" />
     <ClCompile Include="j1App.cpp" />
     <ClCompile Include="j1Audio.cpp" />
     <ClCompile Include="j1Input.cpp" />
@@ -134,6 +135,7 @@
     <ClCompile Include="PugiXml\src\pugixml.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="InputEvent.h" />
     <ClInclude Include="j1App.h" />
     <ClInclude Include="j1Audio.h" />
     <ClInclude Include="j1Input.h" />

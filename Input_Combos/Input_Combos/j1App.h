@@ -11,6 +11,7 @@
 
 class j1Window;
 class j1Input;
+class j1InputCombos;
 class j1Render;
 class j1Textures;
 class j1Audio;
@@ -77,6 +78,7 @@ public:
 	// Modules
 	j1Window*			win = nullptr;
 	j1Input*			input = nullptr;
+	j1InputCombos*      input_combos = nullptr;
 	j1Render*			render = nullptr;
 	j1Textures*			tex = nullptr;
 	j1Audio*			audio = nullptr;

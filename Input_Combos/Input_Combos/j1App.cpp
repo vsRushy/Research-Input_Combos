@@ -7,6 +7,7 @@
 
 #include "j1Window.h"
 #include "j1Input.h"
+#include "j1InputCombos.h"
 #include "j1Render.h"
 #include "j1Textures.h"
 #include "j1Audio.h"
@@ -19,6 +20,7 @@ j1App::j1App(int argc, char* args[]) : argc(argc), args(args)
 	PERF_START(ptimer);
 
 	input = new j1Input();
+	input_combos = new j1InputCombos();
 	win = new j1Window();
 	render = new j1Render();
 	tex = new j1Textures();
@@ -28,6 +30,7 @@ j1App::j1App(int argc, char* args[]) : argc(argc), args(args)
 	// Ordered for awake / Start / Update
 	// Reverse order of CleanUp
 	AddModule(input);
+	AddModule(input_combos);
 	AddModule(win);
 	AddModule(tex);
 	AddModule(audio);

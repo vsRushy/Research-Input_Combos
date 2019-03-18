@@ -1,9 +1,13 @@
 #ifndef __INPUTCOMBOS_H__
 #define __INPUTCOMBOS_H__
 
-#include "j1Module.h"
+#include <list>
+#include <vector>
 
+#include "j1Module.h"
 #include "j1PerfTimer.h"
+
+class InputEvent;
 
 class j1InputCombos : public j1Module
 {
@@ -21,10 +25,11 @@ public:
 	bool CleanUp();
 
 private:
-	// std::vector<InputEvent*> events;
+	std::list<InputEvent*> user_input_events;
 
 private:
-
+	std::vector<InputEvent*> shoryuken_combo;
+	std::vector<InputEvent*> kayoken_combo;
 };
 
 #endif // __INPUTCOMBOS_H__
