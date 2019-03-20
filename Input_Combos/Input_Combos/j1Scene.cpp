@@ -31,8 +31,26 @@ bool j1Scene::Start()
 {
 	tex_ryu_spritesheet = App->tex->Load("Assets/Textures/ryu_spritesheet.png");
 
-	// Define rects
-	rect_ryu = { 7, 14, 59, 90 };
+	idle.PushBack({ 7, 14, 59, 90 });
+
+	hadouken.PushBack({ 17, 1417, 74, 90 });
+	hadouken.PushBack({ 112, 1417, 85, 90 });
+	hadouken.PushBack({ 210, 1417, 90, 90 });
+	hadouken.PushBack({ 315, 1417, 106, 90 });
+	hadouken.PushBack({ 431, 1417, 126, 90 });
+	hadouken.speed = 0.08f;
+	hadouken.loop = false;
+
+	shoryuken.PushBack({ 12, 1651, 62, 127 });
+	shoryuken.PushBack({ 99, 1651, 68, 127 });
+	shoryuken.PushBack({ 176, 1651, 59, 127 });
+	shoryuken.PushBack({ 244, 1651, 53, 127 });
+	shoryuken.PushBack({ 316, 1651, 48, 127 });
+	shoryuken.PushBack({ 369, 1651, 59, 127 });
+	shoryuken.speed = 0.08f;
+	shoryuken.loop = false;
+
+	current_player_animation = &idle;
 	
 	return true;
 }
@@ -40,8 +58,6 @@ bool j1Scene::Start()
 // Called each loop iteration
 bool j1Scene::PreUpdate()
 {
-
-
 	return true;
 }
 
@@ -67,7 +83,12 @@ bool j1Scene::Update(float dt)
 		App->render->camera.x -= floor(200.0f * dt);*/
 
 	// Draw ------------------
-	App->render->Blit(tex_ryu_spritesheet, 0, 0, &rect_ryu);
+	App->render->Blit(tex_ryu_spritesheet, 0, 0, &(current_player_animation->GetCurrentFrame()));
+
+	if (current_player_animation->Finished() && current_player_animation != &idle)
+	{
+		current_player_animation = &idle;
+	}
 
 	return true;
 }
@@ -91,4 +112,25 @@ bool j1Scene::CleanUp()
 	App->tex->UnLoad(tex_ryu_spritesheet);
 
 	return true;
+}
+
+void j1Scene::SetPlayerAnimation(j1Scene::PLAYER_STATE s)
+{
+	switch (s)
+	{
+	case j1Scene::PLAYER_STATE::STATE_IDLE:
+		idle.Reset();
+		current_player_animation = &idle;
+		break;
+	case j1Scene::PLAYER_STATE::STATE_HADOUKEN:
+		hadouken.Reset();
+		current_player_animation = &hadouken;
+		break;
+	case j1Scene::PLAYER_STATE::STATE_SHORYUKEN:
+		shoryuken.Reset();
+		current_player_animation = &shoryuken;
+		break;
+	default:
+		break;
+	}
 }

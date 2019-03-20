@@ -39,6 +39,9 @@
     <ClCompile Include="InputEvent.cpp">
       <Filter>User_Input</Filter>
     </ClCompile>
+    <ClCompile Include="InputCombo.cpp">
+      <Filter>User_Input</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="j1App.h" />
@@ -88,6 +91,12 @@
     <ClInclude Include="InputEvent.h">
       <Filter>User_Input</Filter>
     </ClInclude>
+    <ClInclude Include="InputCombo.h">
+      <Filter>User_Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Animation.h">
+      <Filter>Tools</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Modules">
@@ -111,5 +120,13 @@
     <Filter Include="User_Input">
       <UniqueIdentifier>{c67d01ab-41b2-4c6e-b985-c77ce2905a0d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Config">
+      <UniqueIdentifier>{7116c111-fa6a-434e-8db9-eba58145140f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="..\Game\config.xml">
+      <Filter>Config</Filter>
+    </Xml>
   </ItemGroup>
 </Project>

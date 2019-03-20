@@ -1,15 +1,12 @@
 #include "InputEvent.h"
 
-InputEvent::InputEvent(CUSTOM_EVENT_TYPE type, float time_limit)
+InputEvent::InputEvent(CUSTOM_EVENT_TYPE type, bool use_of_timer)
 {
 	this->type = type;
-	this->time_limit = time_limit;
-}
-
-InputEvent::InputEvent(CUSTOM_EVENT_TYPE type)
-{
-	this->type = type;
-	this->timer.Start();
+	if (use_of_timer)
+	{
+		timer.Start();
+	}
 }
 
 InputEvent::~InputEvent()

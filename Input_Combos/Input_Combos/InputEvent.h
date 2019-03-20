@@ -4,7 +4,7 @@
 #include "j1Module.h"
 #include "j1PerfTimer.h"
 
-class InputEvent : public j1Module
+class InputEvent
 {
 public:
 	enum class CUSTOM_EVENT_TYPE
@@ -20,15 +20,12 @@ public:
 	};
 
 public:
-	InputEvent(CUSTOM_EVENT_TYPE type, float time_limit);
-	InputEvent(CUSTOM_EVENT_TYPE type);
+	InputEvent(CUSTOM_EVENT_TYPE type, bool use_of_timer = false);
 	~InputEvent();
 
-private:
-	float time_since_start = 0.0f;
-	float time_limit = 0.0f;
-	CUSTOM_EVENT_TYPE type = CUSTOM_EVENT_TYPE::UNKNOWN;
+public:
 	j1PerfTimer timer;
+	CUSTOM_EVENT_TYPE type = CUSTOM_EVENT_TYPE::UNKNOWN;
 };
 
 #endif // __INPUTEVENT_H__

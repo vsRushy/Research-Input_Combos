@@ -2,8 +2,8 @@
 
 <config>
   <app>
-    <title>Game Development Testbed</title>
-    <organization>UPC</organization>
+    <title>Research - Input Combos</title>
+    <organization>Gerard Marcos Freixas</organization>
   </app>
 	
   <renderer>
@@ -17,6 +17,20 @@
     <resizable value="false"/>
     <fullscreen_window value="false"/>
   </window>
+
+  <input_combos>
+    <combo name="hadouken">
+      <input_event type="down"/>
+      <input_event type="right"/>
+      <input_event type="punch"/>
+    </combo>
+    <combo name="shoryuken">
+      <input_event type="left"/>
+      <input_event type="up"/>
+      <input_event type="down"/>
+      <input_event type="kick"/>
+    </combo>
+  </input_combos>
 
   <gui>
     <atlas file="gui/atlas.png"/>
