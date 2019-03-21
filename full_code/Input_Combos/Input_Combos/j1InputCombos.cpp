@@ -175,8 +175,6 @@ void j1InputCombos::ClearInputBufferAfterCombo()
 				}
 
 				ClearInputBuffer();
-
-				break;
 			}
 		}
 	}

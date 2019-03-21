@@ -1,4 +1,4 @@
-# Research-Input_Combos
+﻿# Research-Input_Combos
 
 I am <a href="https://www.linkedin.com/in/gerard-marcos-freixas-0a9284158">Gerard Marcos</a>, student of the
 <a href="https://www.citm.upc.edu/ing/estudis/graus-videojocs">Bachelor’s Degree in

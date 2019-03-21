@@ -24,12 +24,9 @@
       <input_event type="right"/>
       <input_event type="punch"/>
     </combo>
-    <combo name="shoryuken">
-      <input_event type="left"/>
-      <input_event type="up"/>
-      <input_event type="down"/>
-      <input_event type="kick"/>
-    </combo>
+  <!-- TODO 1: Create another combo. Place any inputs you want! Guess what the attribute "name" of the combo should be.
+       Investigate through the code for some clues. We can add another input_event type called "kick". -->
+    
   </input_combos>
 
   <gui>

@@ -21,11 +21,13 @@ j1InputCombos::~j1InputCombos()
 
 }
 
+// TODO 2: We need to fill every combo creation. Think about where we can push every input event to the combo. Hint -> we need to call a function
+//		   located in InputCombo.h/.cpp. Notice another hint in the code.
 bool j1InputCombos::Awake(pugi::xml_node& config)
 {
 	for (pugi::xml_node comb = config.child("combo"); comb; comb = comb.next_sibling("combo"))
 	{
-		InputCombo* combo = new InputCombo();
+		InputCombo* combo = new InputCombo(); /* Hint #TODO 2 */
 
 		std::string name(comb.attribute("name").as_string());
 
@@ -59,7 +61,6 @@ bool j1InputCombos::Awake(pugi::xml_node& config)
 				event_type = InputEvent::CUSTOM_EVENT_TYPE::KICK;
 
 			InputEvent* input_event = new InputEvent(event_type);
-			combo->FillComboChain(input_event);
 		}
 
 		combos.push_back(combo);
@@ -77,30 +78,9 @@ bool j1InputCombos::Start()
 
 bool j1InputCombos::PreUpdate()
 {
-	if (App->input->GetKey(SDL_SCANCODE_LEFT) == KEY_DOWN)
-	{
-		user_input_events.push_back(ReturnEvent(InputEvent::CUSTOM_EVENT_TYPE::LEFT));
-	}
-	if (App->input->GetKey(SDL_SCANCODE_UP) == KEY_DOWN)
-	{
-		user_input_events.push_back(ReturnEvent(InputEvent::CUSTOM_EVENT_TYPE::UP));
-	}
-	if (App->input->GetKey(SDL_SCANCODE_RIGHT) == KEY_DOWN)
-	{
-		user_input_events.push_back(ReturnEvent(InputEvent::CUSTOM_EVENT_TYPE::RIGHT));
-	}
-	if (App->input->GetKey(SDL_SCANCODE_DOWN) == KEY_DOWN)
-	{
-		user_input_events.push_back(ReturnEvent(InputEvent::CUSTOM_EVENT_TYPE::DOWN));
-	}
-	if (App->input->GetKey(SDL_SCANCODE_Z) == KEY_DOWN)
-	{
-		user_input_events.push_back(ReturnEvent(InputEvent::CUSTOM_EVENT_TYPE::PUNCH));
-	}
-	if (App->input->GetKey(SDL_SCANCODE_X) == KEY_DOWN)
-	{
-		user_input_events.push_back(ReturnEvent(InputEvent::CUSTOM_EVENT_TYPE::KICK));
-	}
+	// TODO 3: We need to check and choose what keys we press (depending on the config.xml). If we press one of these keys, push this event to
+	//		   the user_input_events std::list. Hint -> Usage of ReturnEvent(parameter) function.
+	
 
 	/*LOG("<<<<<<< INPUT EVENTS LIST: %i", user_input_events.size());
 	if (user_input_events.size() > 0)
@@ -135,14 +115,20 @@ InputEvent* j1InputCombos::ReturnEvent(InputEvent::CUSTOM_EVENT_TYPE event_type)
 
 void j1InputCombos::DeleteTimingEvents()
 {
+	// TODO 4: First of all, uncomment the following block of code. This function deletes any input event that there
+	//         is in the buffer Think about what should be the condition. Also, we need to place another line of code inside the condition block *.
+	//		   Hint #1 -> Remember what I said about the buffer? (What was the condition to delete an element). Hint #2 -> There is a macro you need
+	//		   somewhere...
+
+	/*
 	if (user_input_events.size() > 0)
 	{
 		std::list<InputEvent*>::const_iterator item = user_input_events.begin();
 		while (item != user_input_events.end())
 		{
-			if ((*item)->timer.ReadMs() > INPUT_MAX_TIME)
+			if (-- CONDITION --)
 			{
-				delete *item;
+			    // * here
 				item = user_input_events.erase(item);
 			}
 			else
@@ -151,8 +137,10 @@ void j1InputCombos::DeleteTimingEvents()
 			}
 		}
 	}
+	*/
 }
 
+// TODO 5: Set the player animation. There are two lines of code you need to place somewhere here... No hints this time.
 void j1InputCombos::ClearInputBufferAfterCombo()
 {
 	if (user_input_events.size() > 0)
@@ -165,18 +153,15 @@ void j1InputCombos::ClearInputBufferAfterCombo()
 				switch (temp_name)
 				{
 				case InputCombo::COMBO_NAME::HADOUKEN:
-					App->scene->SetPlayerAnimation(j1Scene::PLAYER_STATE::STATE_HADOUKEN);
 					break;
 				case InputCombo::COMBO_NAME::SHORYUKEN:
-					App->scene->SetPlayerAnimation(j1Scene::PLAYER_STATE::STATE_SHORYUKEN);
 					break;
 				default:
 					break;
 				}
 
-				ClearInputBuffer();
+				// TODO 6: Guess what we need to do here. Simple function call!
 
-				break;
 			}
 		}
 	}
