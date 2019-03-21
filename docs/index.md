@@ -129,7 +129,9 @@ For instance:
 
 #### 3.2. Memory management
 
+There is no way we can't store all these input events in the buffer forever. Therefore, we need to create some rules in order to decide when to delete these input events. Note that the input events are dynamically allocated in memory. 
 
+<img src="">
 
 #### 3.3. The implementation in-depth
 
