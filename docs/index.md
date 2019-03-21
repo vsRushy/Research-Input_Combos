@@ -336,7 +336,24 @@ module. Play with the classes I created, called:
 
 ### 5. Extra concepts
 
+* **Animation cancelling & actions or colliders**
 
+In our code we can cancel our animations by using another one. Good example in League of Legends:
+
+Click [here](https://www.youtube.com/watch?v=jvrXlVv794o)
+
+Animation cancelling is very rewarding but also very risky. Watch out for the actions and colliders! Another example:
+
+Click [here](https://www.youtube.com/watch?v=qb3HpVSbiLE)
+
+It is very important to mentiont that the developers need to be clear at what point do we do the action (e.g. place a collider) in the animation process. The reward is only possible if the player executes the action and cancels the animation in order to not finish the rest of the animation frames and lose time or advantage.
+
+* **Improvements**
+
+- Controllers
+- Colliders & actions
+- Overall structure
+- Adaptation to a state machine
 
 ## Credits
 
