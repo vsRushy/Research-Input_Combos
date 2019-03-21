@@ -58,9 +58,12 @@ Let's learn new concepts related to a combo.
 
 #### 2.1. Combo differentiation
 
+<img src="Images/image2.gif" width="570px">
+<img src="Images/image3.gif" width="570px">
 
+Between the two images above, we can say that there is the first important factor that differentiates different combo types: the time.
 
-
+In the first image, the timing is not important at all. And in the second image, the combo is determined by the timing of the user.
 
 ## Credits
 
