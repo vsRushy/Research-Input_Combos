@@ -139,7 +139,11 @@ There is no way we can't store all these input events in the buffer forever. The
 
 #### 3.3. The implementation in-depth
 
+**Application module**: j1InputCombos
 
+**InputCombo class**: InputCombo
+
+**InputEvent class** InputEvent
 
 ### 4. Code exercises
 
