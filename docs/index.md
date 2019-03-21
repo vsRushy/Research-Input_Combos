@@ -307,19 +307,19 @@ Location: Input_Combos/Modules/j1InputCombos.cpp
 
 **TODO 2 - SOLUTION:**
 
-<img src="Images/image10.png">
+<img src="Images/image10.png" width="520px">
 
 **TODO 3 - SOLUTION:**
 
-<img src="Images/image11.png">
+<img src="Images/image11.png" width="520px">
 
 **TODO 4 - SOLUTION:**
 
-<img src="Images/image12.png">
+<img src="Images/image12.png" width="520px">
 
 **TODO 5 - SOLUTION:**
 
-<img src="Images/image13.png">
+<img src="Images/image13.png" width="520px">
 
 **TODO 6 - SOLUTION:**
 
