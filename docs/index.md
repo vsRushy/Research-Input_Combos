@@ -295,25 +295,35 @@ Set the player animation. There are two lines of code you need to place somewher
 
 Location: Input_Combos/Modules/j1InputCombos.cpp
 
+**TODO 6:**
+
+Guess what we need to do here. Simple function call!
+
+Location: Input_Combos/Modules/j1InputCombos.cpp
+
 **TODO 1 - SOLUTION:**
 
 <img src="Images/image9.png">
 
 **TODO 2 - SOLUTION:**
 
-
+<img src="Images/image10.png">
 
 **TODO 3 - SOLUTION:**
 
-
+<img src="Images/image11.png">
 
 **TODO 4 - SOLUTION:**
 
-
+<img src="Images/image12.png">
 
 **TODO 5 - SOLUTION:**
 
+<img src="Images/image13.png">
 
+**TODO 6 - SOLUTION:**
+
+<img src="Images/image14.png">
 
 ### 5. Extra concepts
 
