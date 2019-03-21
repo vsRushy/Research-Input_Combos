@@ -133,6 +133,10 @@ There is no way we can't store all these input events in the buffer forever. The
 
 <img src="Images/image8.png">
 
+**First rule:** We define a maximum time limit for every input event. We activate a timer for every input event and, if it exceeds the maximum time limit, we delete this input event from the buffer.
+
+**Second rule:** When the user completes a combo, we delete all the input events that are stored inside the buffer.
+
 #### 3.3. The implementation in-depth
 
 
