@@ -87,6 +87,18 @@ We can divide a comby by two types:
 
 ##### 2.1.4. Definition & input scheme
 
+<img src="Images/image4.png">
+
+### 3. Code structure
+
+
+
+#### 3.1. Input storage
+
+
+
+#### 3.2. Memory management
+
 ## Credits
 
 **Author:** Gerard Marcos Freixas
