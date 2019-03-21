@@ -32,6 +32,8 @@ subject Project 2, under supervision of lecturer
 * Code exercises
 * Extra concepts
 
+<img src="Images/image1.gif">
+
 ## Content
 
 ### 1. Introduction
@@ -56,7 +58,9 @@ Let's learn new concepts related to a combo.
 
 #### 2.1. Combo differentiation
 
-<img src="Images/image1.gif">
+
+
+
 
 ## Credits
 
