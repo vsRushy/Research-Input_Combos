@@ -56,7 +56,7 @@ Let's learn new concepts related to a combo.
 
 #### 2.1. Combo differentiation
 
-<img src="">
+<img src="Images/image1.gif">
 
 ## Credits
 
