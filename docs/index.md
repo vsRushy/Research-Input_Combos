@@ -8,17 +8,15 @@ subject Project 2, under supervision of lecturer
 
 ## About
 
-This repository can be found at:
+**Repository:** Click [here](https://github.com/vsRushy/Research-Input_Combos)
 
-https://github.com/vsRushy/Research-Input_Combos
+**Webpage:** Click [here](https://vsrushy.github.io/Research-Input_Combos/)
 
-Webpage:
+**Presentation:** Click [here](https://docs.google.com/presentation/d/16z97q2Py7VZDIpAKD4kI0Hrswirgs1L-MljOpgHzotc/edit?usp=sharing)
 
-https://vsrushy.github.io/Research-Input_Combos/
+## Index
 
-Presentation: 
 
-https://docs.google.com/presentation/d/16z97q2Py7VZDIpAKD4kI0Hrswirgs1L-MljOpgHzotc/edit?usp=sharing
 
 ## Content
 
@@ -26,8 +24,6 @@ https://docs.google.com/presentation/d/16z97q2Py7VZDIpAKD4kI0Hrswirgs1L-MljOpgHz
 
 #### 1.1. What is a combo?
 
-cancel anim etc
-lerp collisions?
 
 ## Credits
 
