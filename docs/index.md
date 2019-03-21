@@ -91,7 +91,11 @@ A very clear example of the immediate input is the videogame Street Figther II, 
 
 ##### 2.1.3. Degree of freedom
 
+The **third main factor** that determines a combo is its **degree of freedom**. This means that the chain of input events of a combo can be checked (or not). For a better understanding of this, a good example is the videogame Hearthstone. The combos aren't determined by the developers, but the input events still create a combo. For instance, the combos can be determined by the development team, like Tekken 7, for instance, in which the combo chain needs to be like the predefined combo chain in order to execute the combo. Therefore:
 
+* **Input degrees of freedom**
+  * **Defined:** Determined chains, checked chains.
+  * **Undefined** Undetermined chains, unchecked chains.
 
 ##### 2.1.4. Definition & input scheme
 
