@@ -16,13 +16,23 @@ subject Project 2, under supervision of lecturer
 
 ## Index
 
-
+* Introduction
+  * Presentation blocks
+  * What is a combo?
+* Block I: Deeping into the subject
+  * Combo differentiation
+    * Time dependency
+    * Immediate and holding input
+    * Degree of freedom
+    * Definition & input scheme
+* Block II: Code structure
+  * Input storage
+  * Memory management
+  * The implementation in-depth
+* Code exercises
+* Extra concepts
 
 ## Content
-
-### 1. Introduction
-
-#### 1.1. What is a combo?
 
 
 ## Credits
@@ -31,7 +41,7 @@ Author:
 
 Gerard Marcos Freixas
 
-## Useful links
+## Useful links and references
 
 https://en.wikipedia.org/wiki/Combo_(video_gaming)
 
