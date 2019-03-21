@@ -99,6 +99,22 @@ We can divide a comby by two types:
 
 #### 3.2. Memory management
 
+
+
+#### 3.3. The implementation in-depth
+
+
+
+### 4. Code exercises
+
+
+
+### 5. Extra concepts
+
+
+
+
+
 ## Credits
 
 **Author:** Gerard Marcos Freixas
