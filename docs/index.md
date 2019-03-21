@@ -99,6 +99,12 @@ The **third main factor** that determines a combo is its **degree of freedom**. 
 
 ##### 2.1.4. Definition & input scheme
 
+That being said, the final and correct definition for combo is:
+
+**Combo:** Set of actions performed in sequence, with or without strict timing limitations, that yield a significant benefit or advantage.
+
+Here there is also a scheme focusing on the aspects stated above.
+
 <img src="Images/image4.png">
 
 ### 3. Code structure
