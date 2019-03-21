@@ -325,6 +325,15 @@ Location: Input_Combos/Modules/j1InputCombos.cpp
 
 <img src="Images/image14.png">
 
+**Homework!**
+
+Investigate thoroughly all the code I implemented.
+See the relations between the scene and the
+module. Play with the classes I created, called:
+- User_Input/InputEvent.h
+- User_Input/InputCombo.h
+- Modules/j1InputCombos.h
+
 ### 5. Extra concepts
 
 
