@@ -141,9 +141,127 @@ There is no way we can't store all these input events in the buffer forever. The
 
 **Application module**: j1InputCombos
 
+```c++
+#ifndef __J1INPUTCOMBOS_H__
+#define __J1INPUTCOMBOS_H__
+
+#include <list>
+#include <vector>
+
+#include "j1Module.h"
+#include "j1PerfTimer.h"
+#include "InputEvent.h"
+
+#define INPUT_MAX_TIME 5000.0f
+
+class InputCombo;
+
+class j1InputCombos : public j1Module
+{
+public:
+	j1InputCombos();
+	~j1InputCombos();
+
+	bool Awake(pugi::xml_node& config);
+
+	bool Start();
+
+	bool PreUpdate();
+	bool PostUpdate();
+
+	bool CleanUp();
+
+	// ---------
+
+	InputEvent* ReturnEvent(InputEvent::CUSTOM_EVENT_TYPE event_type);
+
+	void DeleteTimingEvents();
+	void ClearInputBufferAfterCombo();
+
+	void ClearInputBuffer();
+	void ClearCombosVector();
+
+private:
+	std::list<InputEvent*> user_input_events;
+
+private:
+	std::vector<InputCombo*> combos;
+};
+
+#endif // __J1INPUTCOMBOS_H__
+```
+
 **InputCombo class**: InputCombo
 
+```c++
+#ifndef __INPUTCOMBO_H__
+#define __INPUTCOMBO_H__
+
+#include <vector>
+#include <list>
+
+class InputEvent;
+
+class InputCombo
+{
+public:
+	enum class COMBO_NAME
+	{
+		HADOUKEN,
+		SHORYUKEN
+	};
+
+public:
+	InputCombo();
+	~InputCombo();
+
+	void FillComboChain(InputEvent* input_event);
+
+	bool CheckCommonInput(std::list<InputEvent*> input_event);
+
+public:
+	std::vector<InputEvent*> vector_item;
+	COMBO_NAME combo_name;
+};
+
+#endif // __INPUTCOMBO_H__
+```
+
 **InputEvent class** InputEvent
+
+```c++
+#ifndef __INPUTEVENT_H__
+#define __INPUTEVENT_H__
+
+#include "j1Module.h"
+#include "j1PerfTimer.h"
+
+class InputEvent
+{
+public:
+	enum class CUSTOM_EVENT_TYPE
+	{
+		UNKNOWN = -1,
+
+		LEFT,
+		RIGHT,
+		UP,
+		DOWN,
+		PUNCH,
+		KICK
+	};
+
+public:
+	InputEvent(CUSTOM_EVENT_TYPE type, bool use_of_timer = false);
+	~InputEvent();
+
+public:
+	j1PerfTimer timer;
+	CUSTOM_EVENT_TYPE type = CUSTOM_EVENT_TYPE::UNKNOWN;
+};
+
+#endif // __INPUTEVENT_H__
+```
 
 ### 4. Code exercises
 
