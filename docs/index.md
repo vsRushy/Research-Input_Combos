@@ -83,9 +83,9 @@ It is also necessary to differentiate if an input is immediate or holded. Conseq
 
 A very clear example of the immediate input is the videogame Street Figther II, and another clear example of the holding input is the videogame Heavy Rain.
 
-<img src="">
+<img src="Images/image5.gif" width="570px">
 
-<img src="">
+<img src="Images/image6.gif" width="570px">
 
 ##### 2.1.3. Degree of freedom
 
