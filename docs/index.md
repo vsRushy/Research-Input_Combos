@@ -61,7 +61,7 @@ Let's learn new concepts related to a combo.
 <img src="Images/image2.gif" width="570px">
 <img src="Images/image3.gif" width="570px">
 
-Between the two images above, we can say that there is the first important factor that differentiates different combo types: the time.
+Between the two images above, we can say that there is the **first main factor** that differentiates different combo types: **the time**.
 
 In the first image, the timing is not important at all. And in the second image, the combo is determined by the timing of the user.
 
@@ -79,7 +79,13 @@ We can divide a comby by two types:
 
 ##### 2.1.2. Immediate and holding input
 
+It is also necessary to differentiate if an input is immediate or holded. Consequently, if the input is immediate, the videogame will have  more frenetic, frenzy and active gameplay; the opposite happens when the input is holded.
 
+A very clear example of the immediate input is the videogame Street Figther II, and another clear example of the holding input is the videogame Heavy Rain.
+
+<img src="">
+
+<img src="">
 
 ##### 2.1.3. Degree of freedom
 
