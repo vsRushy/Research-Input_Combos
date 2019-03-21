@@ -125,7 +125,7 @@ The key here is to check if the array of the input events that are stored in eve
 
 For instance:
 
-
+<img src="Images/image7.png">
 
 #### 3.2. Memory management
 
