@@ -46,7 +46,17 @@ Note that there are coding exercises in order to understand the system a lot bet
 
 #### 1.2. What is a combo?
 
+Wikipedia's definition of combo is: set of actions performed in sequence, usually with strict timing limitations, that yield a significant benefit or advantage.
 
+This definition is incorrect, in the "usually with strict timing limitations". We'll get into the correct definition soon.
+
+### 2. Deeping into the subject
+
+Let's learn new concepts related to a combo.
+
+#### 2.1. Combo differentiation
+
+<img src="">
 
 ## Credits
 
