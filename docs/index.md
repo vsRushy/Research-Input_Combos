@@ -131,7 +131,7 @@ For instance:
 
 There is no way we can't store all these input events in the buffer forever. Therefore, we need to create some rules in order to decide when to delete these input events. Note that the input events are dynamically allocated in memory. 
 
-<img src="">
+<img src="Images/image8.png">
 
 #### 3.3. The implementation in-depth
 
