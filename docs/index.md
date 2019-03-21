@@ -115,7 +115,17 @@ Now let's get into the code and practical part, where an input combo system is i
 
 #### 3.1. Input storage
 
-We need to save every input event whenever the user presses a key or button. Hence, we follow the user inputs by **input tracking**. 
+We need to save every input event whenever the user presses a key or button. Hence, we follow the user inputs by **input tracking**.
+
+In a list, we store the user inputs. It works as a buffer. It has no limit, but it could be a potential future implementation. But remember that we also need to store the predefined combos and its input events! The combos and its input events that form a combo are stored in a vector.
+
+The development team need to define the combos in a .xml file, following an existing structure.
+
+The key here is to check if the array of the input events that are stored in every combo exists in the same order in the buffer.
+
+For instance:
+
+
 
 #### 3.2. Memory management
 
