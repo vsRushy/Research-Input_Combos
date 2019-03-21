@@ -81,6 +81,8 @@ We can divide a comby by two types:
 
 It is also necessary to differentiate if an input is immediate or holded. Consequently, if the input is immediate, the videogame will have  more frenetic, frenzy and active gameplay; the opposite happens when the input is holded.
 
+Therefore, the **second main factor** that determines a combo is **the time pressing a button**.
+
 A very clear example of the immediate input is the videogame Street Figther II, and another clear example of the holding input is the videogame Heavy Rain.
 
 <img src="Images/image5.gif" width="570px">
@@ -127,10 +129,10 @@ A very clear example of the immediate input is the videogame Street Figther II, 
 
 ## Useful links and references
 
-https://en.wikipedia.org/wiki/Combo_(video_gaming)
+[Link 1](https://en.wikipedia.org/wiki/Combo_(video_gaming))
 
-https://www.giantbomb.com/combo/3015-18/
+[Link 2](https://www.giantbomb.com/combo/3015-18/)
 
-https://thirdpersonblog.wordpress.com/2011/08/18/universal-fighting-game-guide-understanding-combo-systems-part-1-the-elements/
+[Link 3](https://thirdpersonblog.wordpress.com/2011/08/18/universal-fighting-game-guide-understanding-combo-systems-part-1-the-elements/)
 
-https://www.reddit.com/r/gamedev/comments/1yu4px/how_to_properly_handle_tons_of_inputs_in_a/
+[Link 4](https://www.reddit.com/r/gamedev/comments/1yu4px/how_to_properly_handle_tons_of_inputs_in_a/)
