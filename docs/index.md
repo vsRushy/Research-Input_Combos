@@ -77,6 +77,16 @@ We can divide a comby by two types:
   * **Parallel input**
   * **Single & parallel input**
 
+##### 2.1.2. Immediate and holding input
+
+
+
+##### 2.1.3. Degree of freedom
+
+
+
+##### 2.1.4. Definition & input scheme
+
 ## Credits
 
 **Author:** Gerard Marcos Freixas
