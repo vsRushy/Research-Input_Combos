@@ -10,9 +10,9 @@ Webpage: https://vsrushy.github.io/Research-Input_Combos/
 
 Presentation: https://docs.google.com/presentation/d/16z97q2Py7VZDIpAKD4kI0Hrswirgs1L-MljOpgHzotc/edit?usp=sharing
 
-## Controls
+## Usage
 
-
+Visit the webpage for all the information.
 
 ## Credits
 
