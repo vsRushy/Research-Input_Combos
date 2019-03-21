@@ -265,11 +265,57 @@ public:
 
 ### 4. Code exercises
 
+**TODO 1:**
+
+Create another combo. Place any inputs you want! Guess what the attribute "name" of the combo should be. Investigate through the code for some clues. We can add another input_event type called "kick".
+
+Location: Input_Combos/Config/config.xml
+
+**TODO 2:**
+
+We need to fill every combo creation. Think about where we can push every input event to the combo. Hint -> we need to call a function located in InputCombo.h/.cpp. Notice another hint in the code.
+
+Location: Input_Combos/Modules/j1InputCombos.cpp
+
+**TODO 3:**
+
+We need to check and choose what keys we press (depending on the config.xml). If we press one of these keys, push this event to the user_input_events std::list. Hint -> Usage of ReturnEvent(parameter) function.
+
+Location: Input_Combos/Modules/j1InputCombos.cpp
+
+**TODO 4:**
+
+First of all, uncomment the following block of code. This function deletes any input event that there is in the buffer Think about what should be the condition. Also, we need to place another line of code inside the condition block. Hint #1 -> Remember what I said about the buffer? (What was the condition to delete an element). Hint #2-> There is a macro you need somewhere...
+
+Location: Input_Combos/Modules/j1InputCombos.cpp
+
+**TODO 5:**
+
+Set the player animation. There are two lines of code you need to place somewhere here... No hints this time.
+
+Location: Input_Combos/Modules/j1InputCombos.cpp
+
+**TODO 1 - SOLUTION:**
+
+
+
+**TODO 2 - SOLUTION:**
+
+
+
+**TODO 3 - SOLUTION:**
+
+
+
+**TODO 4 - SOLUTION:**
+
+
+
+**TODO 5 - SOLUTION:**
+
 
 
 ### 5. Extra concepts
-
-
 
 
 
