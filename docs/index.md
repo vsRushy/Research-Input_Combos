@@ -368,3 +368,9 @@ It is very important to mentiont that the developers need to be clear at what po
 [Link 3](https://thirdpersonblog.wordpress.com/2011/08/18/universal-fighting-game-guide-understanding-combo-systems-part-1-the-elements/)
 
 [Link 4](https://www.reddit.com/r/gamedev/comments/1yu4px/how_to_properly_handle_tons_of_inputs_in_a/)
+
+[Link 5](https://www.youtube.com/watch?v=m5yRLhAx4Ro)
+
+[Link 6](https://www.gamedev.net/forums/topic/581793-input-sequences-for-fighting-game-combos/)
+
+[Link 7](http://gameprogrammingpatterns.com/state.html)
