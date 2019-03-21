@@ -107,13 +107,15 @@ Here there is also a scheme focusing on the aspects stated above.
 
 <img src="Images/image4.png">
 
+It must be clear what the objectives of the videogame are, and select the input combo types from the scheme, depending on the gameplay and user experience.
+
 ### 3. Code structure
 
-
+Now let's get into the code and practical part, where an input combo system is implemented.
 
 #### 3.1. Input storage
 
-
+We need to save every input event whenever the user presses a key or button. Hence, we follow the user inputs by **input tracking**. 
 
 #### 3.2. Memory management
 
