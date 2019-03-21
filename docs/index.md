@@ -34,6 +34,19 @@ subject Project 2, under supervision of lecturer
 
 ## Content
 
+### 1. Introduction
+
+This project main objective is to learn how to implement an input combo system using C++, the SDL library and pugixml library.
+
+#### 1.1. Presentation blocks
+
+The project is divided by two main sections. On the one hand, the first one includes several essential theorical concepts. This way, we have many options to choose from so we can implement it in our projects. On the other hand, the second one includes the code structure of the implementation, with its explanations of the practical concepts.
+
+Note that there are coding exercises in order to understand the system a lot better and learn it quickly and effectively.
+
+#### 1.2. What is a combo?
+
+
 
 ## Credits
 
