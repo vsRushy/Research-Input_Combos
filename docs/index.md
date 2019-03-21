@@ -65,11 +65,17 @@ Between the two images above, we can say that there is the first important facto
 
 In the first image, the timing is not important at all. And in the second image, the combo is determined by the timing of the user.
 
+##### 2.1.1. Time dependency
+
+We can divide a comby by two types:
+
+* **Time-independent:** Only composed by single inputs, meaning only one button is pressed after the previous one.
+
+* **Time-dependent:** Composed by single inputs, parallel inputs, meaning multiple buttons can be pressed at the same time, and a mix of the two.
+
 ## Credits
 
-Author:
-
-Gerard Marcos Freixas
+**Author:** Gerard Marcos Freixas
 
 ## Useful links and references
 
